@@ -6,20 +6,24 @@
 #include <conio.h>
 #include <stdbool.h> // include boolean
 
+const int refreshRate = 50; // 주파수
+
 int main()
 {
-    setcursortype(NOCURSOR); // 커서 깜박이는 것 조절
-    system("pause > nul");   // 실행창 바로 닫힘 해결법
-
+    setcursortype(NOCURSOR);
     int x = 0, y = 0;
+    int cnt = 1;
     char ch;
     gotoxy(x, y);
     printf("@");
     while (true)
     {
-        ch = getch(); // 입력된 키를 변수에 대입
+        ch = '\0';
+        if (kbhit()) // 키보드가 입력 받을 때만
+            ch = getch();
+
         gotoxy(x, y);
-        printf(" "); // @ 지우기
+        printf(" ");
         switch (ch)
         {
         case 'w':
@@ -40,7 +44,14 @@ int main()
         }
         gotoxy(x, y);
         printf("@");
-    }
 
+        gotoxy(0, 0);
+        printf("%d", cnt);          // 1/50 초마다 1씩 증가
+        if (cnt % refreshRate == 0) // 1초마다 1씩 증가
+            printf("\n%d", cnt / refreshRate);
+
+        Sleep(1000 / refreshRate); // 주기 = 1/주파수
+        cnt++;
+    }
     return 0;
 }
