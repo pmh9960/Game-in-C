@@ -1,0 +1,12 @@
+대부분 사용법.
+https://webnautes.tistory.com/1158
+
+실행창 꺼짐 해결법.
+https://m.blog.naver.com/PostView.nhn?blogId=phjphj11&logNo=100111869813&proxyReferer=https%3A%2F%2Fwww.google.com%2F 
+
+C언어로 게임 만들기 공부
+https://m.blog.naver.com/PostView.nhn?blogId=moon44432&logNo=220664296155&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+
+컴파일                   실행
+"key": "ctrl+alt+c"     "key": "ctrl+alt+r"
+
